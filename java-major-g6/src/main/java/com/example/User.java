@@ -31,9 +31,13 @@ public class User {
 	    		)
 	private Profile profile;
 	
-	@OneToMany(targetEntity = Like.class,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(targetEntity = Like.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="userId", referencedColumnName = "userId")
     List<Like> likes;
+	
+	@OneToMany(targetEntity = Certificate.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="userId", referencedColumnName = "userId")
+    List<Certificate> certies;
 	
 //	@OneToMany(targetEntity = Feedback.class,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    @JoinColumn(name="userId", referencedColumnName = "userId")

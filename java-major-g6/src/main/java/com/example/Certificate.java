@@ -7,27 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Feedback {
+public class Certificate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int feedbackId;
-	private String feedback;
-	
-//	@ManyToOne
-//	@JoinColumns({@JoinColumn(name="courseId", referencedColumnName = "courseId"),@JoinColumn(name="userId", referencedColumnName = "userId")})
-//	private Course course;
-//	private User user;
+	private int certiId;
+	private String certiPath;
 	
 	@ManyToOne(targetEntity = Course.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="courseId", referencedColumnName = "courseId")
 	private Course course;
-	
-	@ManyToOne(targetEntity = User.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="userId", referencedColumnName = "userId")
-	private User user;
-	
+
 }
