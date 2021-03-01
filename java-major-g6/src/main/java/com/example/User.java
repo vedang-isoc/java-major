@@ -38,7 +38,12 @@ public class User {
 	@OneToMany(targetEntity = Certificate.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="userId", referencedColumnName = "userId")
     List<Certificate> certies;
-	
+//	
+//	 @OneToOne(fetch = FetchType.LAZY,
+//	    		optional = false)
+//	 @JoinColumn(name="resultID",nullable = false,referencedColumnName = "resultID")
+//	 private Result result;
+//	
 //	@OneToMany(targetEntity = Feedback.class,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    @JoinColumn(name="userId", referencedColumnName = "userId")
 //    List<Feedback> feedbacks;

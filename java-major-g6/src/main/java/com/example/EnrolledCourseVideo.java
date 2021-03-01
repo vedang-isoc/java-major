@@ -6,11 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Reports {
+public class EnrolledCourseVideo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int reportId;
-	private String reportName;
-	private String reportPath;
-
+	private int ecvId;
+	private int timeSeen;
+	private boolean completed;
 }
